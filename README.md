@@ -1,6 +1,6 @@
-# 🏥 Healthcare Operations Simulation – Emergency Department Flow
+#  Healthcare Operations Simulation – Emergency Department Flow
 
-## 🎯 Objective
+##  Objective
 
 This project explores Healthcare Operations & Systems Design using real emergency-department (ED) data to demonstrate:
 
@@ -10,7 +10,7 @@ This project explores Healthcare Operations & Systems Design using real emergenc
 
 ---
 
-## 📘 Dataset
+##  Dataset
 
 **File**: `data/emergency_service.csv`  
 **Records**: ~1,260 anonymized ED visits
@@ -24,7 +24,7 @@ This project explores Healthcare Operations & Systems Design using real emergenc
 
 ---
 
-## ⚙️ Model Structure
+##  Model Structure
 
 | Stage             | Resource  | Distribution       | Purpose              |
 | ----------------- | --------- | ------------------ | -------------------- |
@@ -35,7 +35,7 @@ This project explores Healthcare Operations & Systems Design using real emergenc
 
 ---
 
-## 🧮 Six Sigma Baseline
+##  Six Sigma Baseline
 
 | Metric                 | Value     |
 | ---------------------- | --------- |
@@ -45,22 +45,22 @@ This project explores Healthcare Operations & Systems Design using real emergenc
 | Cpk                    | −0.24     |
 | DPMO                   | ≈ 718,000 |
 
-> ⚠️ Process is not capable; ~72% of cases exceed the spec limit.
+>  Process is not capable; ~72% of cases exceed the spec limit.
 
 ---
 
-## 🪚 Lean Value Analysis
+##  Lean Value Analysis
 
 | Category              | Time (min) | Share |
 | --------------------- | ---------- | ----- |
 | Value-added (VA)      | ≈ 5,942    | 2.5%  |
 | Non-value-added (NVA) | ≈ 230,981  | 97.5% |
 
-> 🚨 Huge waste from waiting; target for automation and staff balancing.
+>  Huge waste from waiting; target for automation and staff balancing.
 
 ---
 
-## 🧠 Discrete-Event Simulation (8 h shift)
+##  Discrete-Event Simulation (8 h shift)
 
 | Scenario               | Avg Wait (95% CI) | Avg LOS (95% CI) | Patients (95% CI) |
 | ---------------------- | ----------------- | ---------------- | ----------------- |
@@ -69,25 +69,25 @@ This project explores Healthcare Operations & Systems Design using real emergenc
 | +1 Nurse               | 113 (86–140)      | 143 (116–170)    | 33 (30–36)        |
 | +1 Doctor + Automation | ≈ 87 (65–109)     | ≈ 118 (95–140)   | 47 (44–50)        |
 
-> 📊 Bar chart with 95% CIs confirms adding a doctor yields the only statistically significant improvement.
+>  Bar chart with 95% CIs confirms adding a doctor yields the only statistically significant improvement.
 
 ---
 
-## 🩺 Resource Utilization & Capacity Sweep
+##  Resource Utilization & Capacity Sweep
 
 | Doctors | Avg LOS (95% CI) | Doctor Util (95% CI) | Comment                 |
 | ------- | ---------------- | -------------------- | ----------------------- |
 | 2       | 130 (110–151)    | 93%                  | Overloaded → bottleneck |
 | 3       | 113 (91–135)     | 91%                  | Still high              |
 | 4       | 68 (51–85)       | 90%                  | Stable                  |
-| 5       | 54 (42–66)       | 83%                  | ✅ Optimal (~80–85%)    |
+| 5       | 54 (42–66)       | 83%                  |  Optimal (~80–85%)    |
 | 6       | 36 (30–41)       | 69%                  | Over-staffed            |
 
-> ✅ Doctor utilization ≈ 93% at baseline; 5 doctors balance flow (~83%).
+>  Doctor utilization ≈ 93% at baseline; 5 doctors balance flow (~83%).
 
 ---
 
-## 🔍 Key Findings
+##  Key Findings
 
 - The ED is a **doctor-constrained system**.
 - Adding nurses alone does not help; **triage is not the bottleneck**.
@@ -95,11 +95,11 @@ This project explores Healthcare Operations & Systems Design using real emergenc
 - **Optimal staffing**: 2 nurses + 5 doctors for 8 h shift  
   (target LOS ≤ 120 min, utilization ≤ 85%)
 
-> 🧠 Lean + Six Sigma + Simulation integration provides a complete operations-engineering view.
+>  Lean + Six Sigma + Simulation integration provides a complete operations-engineering view.
 
 ---
 
-## 💾 Project Structure
+##  Project Structure
 
 ```
 ai-health-ops-lab/
@@ -119,7 +119,7 @@ ai-health-ops-lab/
 
 ---
 
-## 🧩 Dependencies
+##  Dependencies
 
 - pandas
 - numpy
@@ -135,7 +135,7 @@ pip install -r requirements.txt
 
 ---
 
-## ✨ How to Run
+##  How to Run
 
 ```bash
 python src/sim_ed.py
@@ -151,7 +151,7 @@ Run cells sequentially.
 
 ---
 
-## 📖 Next Steps (Future Work)
+##  Next Steps (Future Work)
 
 - I will add diagnostics resource (CT/X-ray) to test next bottleneck
 - I will also fit empirical distributions from the dataset (`scipy.stats`)
